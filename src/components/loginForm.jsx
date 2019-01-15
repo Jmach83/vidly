@@ -41,13 +41,13 @@ class LoginForm extends Component {
     handleChange = ({ currentTarget: input }) =>{
         const errors = {...this.state.errors};
         const errorMessage = this.validateproperty(input);
-
         if(errorMessage) errors[input.name] = errorMessage;
         else delete errors[input.name];
+        console.log(errorMessage);
 
         const account = {...this.state.account}
         account[input.name] = input.value;
-        this.setState({ account })
+        this.setState({ account, errors })
     }
 
     render() { 
@@ -72,7 +72,12 @@ class LoginForm extends Component {
                         error={errors.password} 
 
                     />                    
-                    <button className="btn btn-primary">Login</button>
+                    <button 
+                        disabled={this.validate()} 
+                        className="btn btn-primary"
+                    >
+                        Login
+                    </button>
                 </form>
             </div> 
         );
