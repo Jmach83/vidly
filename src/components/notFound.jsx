@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Customers = () => {
+const NotFound = () => {
     return <h1>Not found</h1>;
 }
 
-export default Customers;
+export default NotFound;
