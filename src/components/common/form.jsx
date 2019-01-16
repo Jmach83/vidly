@@ -41,7 +41,6 @@ class Form extends Component {
     const errorMessage = this.validateproperty(input);
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
-    console.log(errorMessage);
 
     const data = { ...this.state.data };
     data[input.name] = input.value;
